@@ -8,9 +8,9 @@ const config = {
   roots: ['<rootDir>/src'],
   testEnvironment: 'node',
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{js}'],
   coverageDirectory: 'coverage',
-  coverageReporters: ['lcov'],
+  coverageReporters: ['html', 'text'],
+  collectCoverageFrom: ['src/**/*.js'],
 };
 
 module.exports = config;
