@@ -6,7 +6,7 @@ const app = require('../../../app');
 
 describe('health-check', () => {
   describe('when system is available', () => {
-    test('responds with status 200', async () => {
+    it('responds with status 200', async () => {
       const response = await request(app).get('/api/health-check');
       expect(response.statusCode).toBe(200);
     });
