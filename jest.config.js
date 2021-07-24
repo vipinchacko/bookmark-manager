@@ -2,7 +2,6 @@
 
 const config = {
   verbose: true,
-  timers: 'modern',
   clearMocks: true,
   resetMocks: true,
   roots: ['<rootDir>/src'],
