@@ -3,6 +3,10 @@
 const util = require('util');
 const jwt = require('jsonwebtoken');
 const { createToken } = require('../jwt');
+const {
+  mockJwtSecret,
+  mockJwtExpiry,
+} = require('../../../devUtils/jest/mockConstants');
 
 jest.mock('util', () => {
   return { promisify: jest.fn(fn => fn) };
@@ -12,13 +16,7 @@ jest.mock('jsonwebtoken', () => {
   return { sign: jest.fn(() => Promise.resolve('JWTTOKEN')) };
 });
 
-const JWT_SECRET = 'SECRET';
-const JWT_EXPIRY = '1000';
-
-jest.mock('../../config', () => ({
-  JWT_EXPIRY,
-  JWT_SECRET,
-}));
+jest.unmock('../jwt');
 
 describe('jwt', () => {
   describe('Create token', () => {
@@ -31,8 +29,8 @@ describe('jwt', () => {
 
       const token = await createToken(payload);
 
-      expect(jwt.sign).toHaveBeenCalledWith(payload, JWT_SECRET, {
-        expiresIn: JWT_EXPIRY,
+      expect(jwt.sign).toHaveBeenCalledWith(payload, mockJwtSecret, {
+        expiresIn: mockJwtExpiry,
       });
       expect(token).toBe(mockToken);
     });
