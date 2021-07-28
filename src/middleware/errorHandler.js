@@ -7,7 +7,7 @@ function errorHandler(err, req, res, next) {
     return next(err);
   }
 
-  return handler(err, res);
+  return handler(err, req, res);
 }
 
 module.exports.errorHandler = errorHandler;

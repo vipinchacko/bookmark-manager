@@ -32,14 +32,14 @@ describe('errorHandler', () => {
   });
 
   describe('when response headers are not already sent', () => {
-    it('does not call the custom error handler', () => {
+    it('calls the custom error handler', () => {
       var res = { headersSent: false };
       var err = new Error();
       var req = {};
       var next = jest.fn();
       errorHandler(err, req, res, next);
 
-      expect(handler).toHaveBeenCalledWith(err, res);
+      expect(handler).toHaveBeenCalledWith(err, req, res);
     });
   });
 });
