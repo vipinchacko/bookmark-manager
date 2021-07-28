@@ -1,6 +1,10 @@
 'use strict';
 
 const config = {
+  setupFiles: [
+    '<rootDir>/devUtils/jest/configMock.js',
+    '<rootDir>/devUtils/jest/jwtMock.js',
+  ],
   verbose: true,
   clearMocks: true,
   resetMocks: true,
