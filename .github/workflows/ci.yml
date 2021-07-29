@@ -42,6 +42,6 @@ jobs:
       - name: Build and push
         run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku container:push -a ${{ env.HEROKU_APP_NAME }} web
       - name: Set environment variables
-        run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku config:set DB_URL=${{ env.DB_URL }} JWT_SECRET=${{ env.JWT_SECRET }} JWT_EXPIRY=${{ env.JWT_EXPIRY }} -a ${{ env.HEROKU_APP_NAME }}
+        run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku config:set DB_URL="${{ env.DB_URL }}" JWT_SECRET="${{ env.JWT_SECRET }}" JWT_EXPIRY="${{ env.JWT_EXPIRY }}" -a ${{ env.HEROKU_APP_NAME }}
       - name: Release
         run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku container:release -a ${{ env.HEROKU_APP_NAME }} web
