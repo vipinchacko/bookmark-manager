@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const { DB_URL } = require('../../config');
+const { DB_URL } = require('../config');
 
 async function connectToDb() {
   try {

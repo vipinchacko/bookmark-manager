@@ -3,7 +3,7 @@
 const app = require('./app');
 
 const { PORT } = require('./config');
-const { connectToDb } = require('./lib/db/db');
+const { connectToDb } = require('./lib/db');
 
 /**  connectToDb is async but we can still start using mongodb models without waiting for connection to be established. */
 connectToDb();
