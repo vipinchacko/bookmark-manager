@@ -12,7 +12,6 @@ const config = {
   testEnvironment: 'node',
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  coverageReporters: ['html', 'text'],
   collectCoverageFrom: ['src/**/*.js'],
 };
 
