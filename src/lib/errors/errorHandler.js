@@ -68,7 +68,6 @@ function errorHandler(err, req, res) {
       ? badRequestError(err)
       : err;
 
-  // TODO: replace with better logger
   req.log.error(decoratedError);
 
   sendResponse(decoratedError, res);
