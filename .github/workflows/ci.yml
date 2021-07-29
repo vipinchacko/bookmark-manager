@@ -6,7 +6,7 @@ on:
 
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+  HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
   DB_URL: ${{ secrets.DB_URL }}
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
   JWT_EXPIRY: ${{ secrets.JWT_EXPIRY }}
