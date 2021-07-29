@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/vipinchacko/bookmark-manager/badge.svg)](https://coveralls.io/github/vipinchacko/bookmark-manager)
+
 # Bookmark Manager
 
 A better way to manage bookmarks
