@@ -2,11 +2,11 @@
 
 const mongoose = require('mongoose');
 
-const { MONGOURI } = require('../../config');
+const { DB_URL } = require('../../config');
 
 async function connectToDb() {
   try {
-    await mongoose.connect(MONGOURI, {
+    await mongoose.connect(DB_URL, {
       useNewUrlParser: true,
     });
     // TODO: Use a better logger

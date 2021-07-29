@@ -7,6 +7,9 @@ on:
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+  DB_URL: ${{ secrets.DB_URL }}
+  JWT_SECRET: ${{ secrets.JWT_SECRET }}
+  JWT_EXPIRY: ${{ secrets.JWT_EXPIRY }}
 
 jobs:
   lint-and-test:
@@ -38,5 +41,7 @@ jobs:
         run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku container:login
       - name: Build and push
         run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku container:push -a ${{ env.HEROKU_APP_NAME }} web
+      - name: Set environment variables
+        run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku config:set DB_URL=${{ env.DB_URL }} JWT_SECRET=${{ env.JWT_SECRET }} JWT_EXPIRY=${{ env.JWT_EXPIRY }} -a ${{ env.HEROKU_APP_NAME }}
       - name: Release
         run: HEROKU_API_KEY=${{ env.HEROKU_API_KEY }} heroku container:release -a ${{ env.HEROKU_APP_NAME }} web
