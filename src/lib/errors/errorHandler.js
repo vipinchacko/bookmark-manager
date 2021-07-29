@@ -69,7 +69,7 @@ function errorHandler(err, req, res) {
       : err;
 
   // TODO: replace with better logger
-  console.error(decoratedError);
+  req.log.error(decoratedError);
 
   sendResponse(decoratedError, res);
 }

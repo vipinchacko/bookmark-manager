@@ -21,7 +21,7 @@ const mockResponse = () => {
 describe('error handler', () => {
   var res;
   // TODO: might need a better mock for request later
-  var req = {};
+  var req = { log: { info: () => {}, error: () => {} } };
 
   beforeEach(() => {
     res = mockResponse();
