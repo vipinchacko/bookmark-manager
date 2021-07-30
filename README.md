@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/vipinchacko/bookmark-manager/badge.svg)](https://coveralls.io/github/vipinchacko/bookmark-manager)
+![Coveralls](https://img.shields.io/coveralls/github/vipinchacko/bookmark-manager?style=for-the-badge)
 
 # Bookmark Manager
 
