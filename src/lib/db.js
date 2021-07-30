@@ -6,9 +6,7 @@ const { DB_URL } = require('../config');
 
 async function connectToDb() {
   try {
-    await mongoose.connect(DB_URL, {
-      useNewUrlParser: true,
-    });
+    await mongoose.connect(DB_URL, { useNewUrlParser: true });
     // TODO: Use a better logger
     console.log('Connected to db');
   } catch (err) {
