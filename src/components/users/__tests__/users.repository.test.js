@@ -19,7 +19,7 @@ describe('Users repository', () => {
   });
 
   describe('addUser', () => {
-    it('should create a new object of the User model', async () => {
+    it('should create a new object of the User model and save to db', async () => {
       var username = 'John';
       var email = 'john@testmail.com';
       var password = 'password';
