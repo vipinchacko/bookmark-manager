@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const { logger } = require('./lib/logger');
 const { errorHandler } = require('./middleware/errorHandler');
+const { dbClient } = require('./middleware/dbClient');
 
 const healthCheckRoutes = require('./components/health-check/healthCheck.routes');
 const userRoutes = require('./components/users/users.routes');
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(logger);
+app.use(dbClient);
 
 app.use('/api/v1/health-check', healthCheckRoutes);
 app.use('/api/v1/users', userRoutes);

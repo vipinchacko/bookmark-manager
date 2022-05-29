@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+
 'use strict';
 
 const config = {
@@ -6,13 +8,12 @@ const config = {
     '<rootDir>/devUtils/jest/jwtMock.js',
   ],
   verbose: true,
-  clearMocks: true,
-  resetMocks: true,
   roots: ['<rootDir>/src'],
   testEnvironment: 'node',
   collectCoverage: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['src/**/*.js', '!src/server.js'],
+  clearMocks: true,
 };
 
 module.exports = config;

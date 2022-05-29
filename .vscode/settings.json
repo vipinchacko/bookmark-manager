@@ -1,10 +1,6 @@
 {
-    "files.autoSave": "onWindowChange",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "eslint.validate": ["javascript"],
-    "eslint.lintTask.enable": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "files.autoSave": "onWindowChange",
+  "eslint.validate": ["javascript"],
+  "eslint.lintTask.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
